@@ -20,8 +20,7 @@ var standupSchema = new Schema({
     memberName: {
         type: String,
         require: true,
-        validate: memberNameValidator
-    }, 
+        validate: memberNameValidator }, 
     project: {
         type: String,
         required: true,

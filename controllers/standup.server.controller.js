@@ -21,7 +21,7 @@ exports.filterByMember = function(req, res) {
     }
 
     query.exec(function(err, results) {
-        res.render('index', { title: 'Standup - List', notes: results });
+        res.render('index', { title: 'Standup - List', notes: results })
     });
 }
 
@@ -32,12 +32,13 @@ exports.create = function(req, res) {
         workYesterday: req.body.workYesterday,
         workToday: req.body.workToday,
         impediment: req.body.impediment
-    }, 'You must select a member name');
+    });
 
     entry.save(function(err) {
         if(err) {
-            var errMsg = 'Sorry, there was a problem saving your note' + err;
+            let errMsg = 'Sorry, there was a problem saving your note' + err;
             res.render('newnote', { title: 'Standup - New note (error)', message: errMsg })
+            console.log(errMsg);
         }
         else {
             console.log('Stand-up meeting note was saved!');

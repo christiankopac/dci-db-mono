@@ -14,6 +14,17 @@ const db = 'mongodb://' + process.env.DB_USER + ':' + process.env.DB_PASS + '@ds
 // Connect to MongoDB
 mongoose.connect(db);
 
+switch(mongoose.connection.readyState) {
+  case 0:
+    console.log('db disconnected');
+  case 1:
+    console.log('db connected');
+  case 2:
+    console.log('db connecting...');
+  case 3:
+    console.log('db disconnecting...');
+}
+
 let app = express();
 
 app.use(logger('dev'));

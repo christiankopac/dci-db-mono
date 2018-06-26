@@ -60,13 +60,13 @@
         <br />
         <div class="container">
             <div class="col-md-12 column list-group">
-                <% notes.forEach(function(note){ %>
+                <% notes.forEach( function(note) { %>
                 <div class="list-group-item">
-                    <div>Note from <em><strong><% note.memberName %></strong></em> on: <% note.createdOn.toDateString() %>
-                        - for project: <strong><% note.project %></strong></div>
-                    <div><strong>Work yesterday:</strong> <% note.workYesterday %></div>
-                    <div><strong>Work today:</strong> <% note.workToday %></div>
-                    <div><strong>Impediment:</strong> <% note.impediment %></div>
+                    <div>Note from <em><strong><%= note.memberName %></strong></em> on: <%= note.createdOn.toDateString() %>
+                        - for project: <strong><%= note.project %></strong></div>
+                    <div><strong>Work yesterday:</strong> <%= note.workYesterday %></div>
+                    <div><strong>Work today:</strong> <%= note.workToday %></div>
+                    <div><strong>Impediment:</strong> <%= note.impediment %></div>
                 </div>
                 <% }); %>
             </div>
